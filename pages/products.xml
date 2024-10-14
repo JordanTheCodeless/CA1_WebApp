@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="products.xsl"?>
+<products>
+  <category></category>
+  <company>
+    <companyName></companyName>
+  </company>
+  <product>
+    <name></name>
+    <code></code>
+    <stockStatus></stockStatus>
+    <expDate></expDate>
+    <unitPrice></unitPrice>
+    <ratings></ratings>
+  </product>
+  <product>
+    <name></name>
+    <code></code>
+    <stockStatus></stockStatus>
+    <expDate></expDate>
+    <unitPrice></unitPrice>
+    <ratings></ratings>
+  </product>
+  <product>
+    <name></name>
+    <code></code>
+    <stockStatus></stockStatus>
+    <expDate></expDate>
+    <unitPrice></unitPrice>
+    <ratings></ratings>
+  </product>
+  <product>
+    <name></name>
+    <code></code>
+    <stockStatus></stockStatus>
+    <expDate></expDate>
+    <unitPrice></unitPrice>
+    <ratings></ratings>
+  </product>
+  <category></category>
+  <company>
+    <companyName></companyName>
+  </company>
+  <product>
+    <name></name>
+    <code></code>
+    <stockStatus></stockStatus>
+    <expDate></expDate>
+    <unitPrice></unitPrice>
+    <ratings></ratings>
+  </product>
+  <category></category>
+  <company>
+    <companyName></companyName>
+  </company>
+  <product>
+    <name></name>
+    <code></code>
+    <stockStatus></stockStatus>
+    <expDate></expDate>
+    <unitPrice></unitPrice>
+    <ratings></ratings>
+  </product>
+
+</products>
