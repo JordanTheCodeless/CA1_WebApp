@@ -1,65 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="products.xsl"?>
-<products>
-  <category></category>
-  <company>
-    <companyName></companyName>
-  </company>
-  <product>
-    <name></name>
-    <code></code>
-    <stockStatus></stockStatus>
-    <expDate></expDate>
-    <unitPrice></unitPrice>
-    <ratings></ratings>
-  </product>
-  <product>
-    <name></name>
-    <code></code>
-    <stockStatus></stockStatus>
-    <expDate></expDate>
-    <unitPrice></unitPrice>
-    <ratings></ratings>
-  </product>
-  <product>
-    <name></name>
-    <code></code>
-    <stockStatus></stockStatus>
-    <expDate></expDate>
-    <unitPrice></unitPrice>
-    <ratings></ratings>
-  </product>
-  <product>
-    <name></name>
-    <code></code>
-    <stockStatus></stockStatus>
-    <expDate></expDate>
-    <unitPrice></unitPrice>
-    <ratings></ratings>
-  </product>
-  <category></category>
-  <company>
-    <companyName></companyName>
-  </company>
-  <product>
-    <name></name>
-    <code></code>
-    <stockStatus></stockStatus>
-    <expDate></expDate>
-    <unitPrice></unitPrice>
-    <ratings></ratings>
-  </product>
-  <category></category>
-  <company>
-    <companyName></companyName>
-  </company>
-  <product>
-    <name></name>
-    <code></code>
-    <stockStatus></stockStatus>
-    <expDate></expDate>
-    <unitPrice></unitPrice>
-    <ratings></ratings>
-  </product>
+<?xml-stylesheet type="text/xsl" href="./products.xsl"?>
+<products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="products.xsd">
 
+  <category id="chocolates">
+  <company>
+    <company-name>Sweet Delight</company-name>
+  </company>
+  <product>
+    <name>Milk Chocolate Bar</name>
+    <code>CHC1001</code>
+    <stock-status>In Stock</stock-status>
+    <expiry-date>2025-03-10</expiry-date>
+    <unit-price>2.99</unit-price>
+    <ratings>4.8</ratings>
+  </product>
+  <product>
+    <name>Dark Chocolate Truffles</name>
+    <code>CHC1002</code>
+    <stock-status>In Stock</stock-status>
+    <expiry-date>2024-12-01</expiry-date>
+    <unit-price>6.50</unit-price>
+    <ratings>4.9</ratings>
+  </product>
+  <product>
+    <name>White Chocolate Bar</name>
+    <code>CHC1003</code>
+    <stock-status>Out of Stock</stock-status>
+    <expiry-date>2024-10-25</expiry-date>
+    <unit-price>3.20</unit-price>
+    <ratings>4.5</ratings>
+  </product>
+  <product>
+    <name>Hazelnut Chocolate Spread</name>
+    <code>CHC1004</code>
+    <stock-status>Limited Stock</stock-status>
+    <expiry-date>2025-01-15</expiry-date>
+    <unit-price>7.99</unit-price>
+    <ratings>4.7</ratings>
+  </product>
+ </category>
+
+  <category id="candies">
+  <company>
+    <company-name>Candyland</company-name>
+  </company>
+  <product>
+    <name>Sour Gummies</name>
+    <code>CAN2001</code>
+    <stock-status>In Stock</stock-status>
+    <expiry-date>2024-09-30</expiry-date>
+    <unit-price>4.50</unit-price>
+    <ratings>4.6</ratings>
+  </product>
+  <product>
+    <name>Lollipop Mix</name>
+    <code>CAN2002</code>
+    <stock-status>In Stock</stock-status>
+    <expiry-date>2024-11-05</expiry-date>
+    <unit-price>3.75</unit-price>
+    <ratings>4.4</ratings>
+  </product>
+  <product>
+    <name>Caramel Toffee</name>
+    <code>CAN2003</code>
+    <stock-status>Out of Stock</stock-status>
+    <expiry-date>2024-12-10</expiry-date>
+    <unit-price>5.25</unit-price>
+    <ratings>4.8</ratings>
+  </product>
+  <product>
+    <name>Hard Candy Assortment</name>
+    <code>CAN2004</code>
+    <stock-status>Limited Stock</stock-status>
+    <expiry-date>2025-02-01</expiry-date>
+    <unit-price>6.00</unit-price>
+    <ratings>4.7</ratings>
+  </product>
+ </category>
+  <category id="cookies">
+  <company>
+    <company-name>Cookie Heaven</company-name>
+  </company>
+  <product>
+    <name>Chocolate Chip Cookies</name>
+    <code>COO3001</code>
+    <stock-status>In Stock</stock-status>
+    <expiry-date>2025-04-15</expiry-date>
+    <unit-price>4.99</unit-price>
+    <ratings>4.9</ratings>
+  </product>
+  <product>
+    <name>Oatmeal Raisin Cookies</name>
+    <code>COO3002</code>
+    <stock-status>In Stock</stock-status>
+    <expiry-date>2025-03-20</expiry-date>
+    <unit-price>4.50</unit-price>
+    <ratings>4.6</ratings>
+  </product>
+  <product>
+    <name>Peanut Butter Cookies</name>
+    <code>COO3003</code>
+    <stock-status>Out of Stock</stock-status>
+    <expiry-date>2025-02-10</expiry-date>
+    <unit-price>5.00</unit-price>
+    <ratings>4.7</ratings>
+  </product>
+  <product>
+    <name>Gluten-Free Cookies</name>
+    <code>COO3004</code>
+    <stock-status>Limited Stock</stock-status>
+    <expiry-date>2025-01-25</expiry-date>
+    <unit-price>5.99</unit-price>
+    <ratings>4.5</ratings>
+  </product>
+</category>
 </products>
