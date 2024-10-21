@@ -38,30 +38,27 @@
                     
                    <div id="productsWrapper">
                         <h1>Products</h1>
-                        
+                        <div class="category">
                             <h2>Chocolates</h2>
-                        <div id="chocWrapper">
                             
-                            <!-- Apply templates for chocolates products -->
-                            <xsl:apply-templates select="category[@id = 'chocolates']/product" />
+                                <xsl:apply-templates select="category[@id = 'chocolates']/product" />
+                            
                         </div>
-                    
-                         <h2>Candies</h2>
-                         
-                        <div id="candyWrapper">
-                           
-                            <!-- Apply templates for chocolates products -->
-                            <xsl:apply-templates select="category[@id = 'candies']/product" />
-                        </div> 
-                    
-                        <h2>Cookies</h2>
                         
-                        <div id="cookieWrapper">
-                           
-                            <!-- Apply templates for chocolates products -->
-                            <xsl:apply-templates select="category[@id = 'cookies']/product" />
+                        <div class="category">
+                            <h2>Candies</h2>
+                            
+                                <xsl:apply-templates select="category[@id = 'candies']/product" />
+                            
                         </div>
-                  </div>
+                        
+                        <div class="category">
+                            <h2>Cookies</h2>
+                            
+                                <xsl:apply-templates select="category[@id = 'cookies']/product" />
+                            
+                        </div>
+                    </div>                        
              
             </main>
                 <!-- Footer will display contact info and company name -->
@@ -89,6 +86,10 @@
             <p>
                 <strong>Price:</strong><br/>
                 <xsl:value-of select="unit-price" />
+            </p>
+            <p>
+                <strong>Stock Status:</strong><br/>
+                <xsl:value-of select="stock-status" />
             </p>
             
         </div>

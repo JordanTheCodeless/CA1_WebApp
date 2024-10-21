@@ -1,35 +1,63 @@
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="products">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="category" maxOccurs="unbounded" minOccurs="0">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="company">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element type="xs:string" name="company-name"/>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="product" maxOccurs="unbounded" minOccurs="0">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element type="xs:string" name="name"/>
-                    <xs:element type="xs:string" name="image"/>
-                    <xs:element type="xs:string" name="stock-status"/>
-                    <xs:element type="xs:date" name="expiry-date"/>
-                    <xs:element type="xs:float" name="unit-price"/>
-                    <xs:element type="xs:float" name="ratings"/>
-                  </xs:sequence>
-                  <xs:attribute name="code" use="required"/>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:attribute type="xs:string" name="id" use="optional"/>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-</xs:schema>
+  <!-- Here I define my root element -->
+<xs:element name="products">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="category" type="categoryType" maxOccurs="unbounded" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<!-- Here I use categoryType to access the elements nested within category -->
+<xs:complexType name="categoryType">
+  <xs:sequence>
+    <xs:element name="company" type="companyType"/>
+    <xs:element name="product" type="productType" maxOccurs="unbounded"/>
+  </xs:sequence>
+  <xs:attribute name="id" type="xs:string" use="optional"/>
+</xs:complexType>
+<!-- company  -->
+ <xs:complexType name="companyType">
+  <xs:sequence>
+    <xs:element name="company-name"/>
+  </xs:sequence>
+ </xs:complexType>
+<!-- Products -->
+ <xs:complexType name="productType">
+  <xs:sequence>
+  <xs:element name="name" type="xs:string"/>
+    <xs:element name="image" type="xs:string"/>
+    <xs:element name="stock-status" type="stockType"/>
+    <xs:element name="expiry-date" type="xs:date" minOccurs="0"/>      
+    <xs:element name="unit-price" type="unitPriceType"/>
+    <xs:element name="ratings" type="ratingsType"/>
+</xs:sequence>
+<xs:attribute name="code" type="productCode" use="required"/>
+</xs:complexType>
+<!-- Putting restrictions on product code regex pattern -->
+ <xs:simpleType name="productCode">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[0-9][0-9][0-9]-[0-9][0-9]"/>
+  </xs:restriction>
+ </xs:simpleType>
+ <!-- Putting restrictions on ratings -->
+  <xs:simpleType name="ratingsType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- restrictions on Unit Price  -->
+   <xs:simpleType name="unitPriceType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+   </xs:simpleType>
+<!-- Stock type restriction -->
+ <xs:simpleType name="stockType">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="In Stock"/>
+    <xs:enumeration value="Pre-order"/>
+    <xs:enumeration value="Out of Stock"/>
+  </xs:restriction>
+ </xs:simpleType>
+</xs:schema> 
