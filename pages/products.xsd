@@ -6,12 +6,20 @@
       <xs:element name="category" type="categoryType" maxOccurs="unbounded" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
+  <!-- https://stackoverflow.com/questions/18658306/xsd-schema-with-unique-id-as-attribute
+  Got answer from this forum on StackOverFlow§
+  -->
+  <xs:unique name="uniqueCode">
+    <xs:selector xpath=".//product"/>
+    <xs:field xpath="@code"/>
+  </xs:unique>
 </xs:element>
 <!-- Here I use categoryType to access the elements nested within category -->
 <xs:complexType name="categoryType">
   <xs:sequence>
     <xs:element name="company" type="companyType"/>
-    <xs:element name="product" type="productType" maxOccurs="unbounded"/>
+    <xs:element name="product" type="productType" maxOccurs="unbounded">
+    </xs:element>
   </xs:sequence>
   <xs:attribute name="id" type="xs:string" use="optional"/>
 </xs:complexType>
@@ -27,11 +35,11 @@
   <xs:element name="name" type="xs:string"/>
     <xs:element name="image" type="xs:string"/>
     <xs:element name="stock-status" type="stockType"/>
-    <xs:element name="expiry-date" type="xs:date" minOccurs="0"/>      
+    <xs:element name="expiry-date" type="xs:date" minOccurs="0"/>
     <xs:element name="unit-price" type="unitPriceType"/>
     <xs:element name="ratings" type="ratingsType"/>
 </xs:sequence>
-<xs:attribute name="code" type="productCode" use="required"/>
+<xs:attribute name="code" type="productCode" use="required" />
 </xs:complexType>
 <!-- Putting restrictions on product code regex pattern -->
  <xs:simpleType name="productCode">
@@ -39,6 +47,7 @@
     <xs:pattern value="[0-9][0-9][0-9]-[0-9][0-9]"/>
   </xs:restriction>
  </xs:simpleType>
+
  <!-- Putting restrictions on ratings -->
   <xs:simpleType name="ratingsType">
     <xs:restriction base="xs:decimal">
@@ -60,4 +69,4 @@
     <xs:enumeration value="Out of Stock"/>
   </xs:restriction>
  </xs:simpleType>
-</xs:schema> 
+</xs:schema>
